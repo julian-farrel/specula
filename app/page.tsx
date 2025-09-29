@@ -2,10 +2,13 @@ import { TopNav } from "@/components/top-nav"
 import { SubFilterBar } from "@/components/sub-filter-bar"
 import { MarketCard, type Market } from "@/components/market-card"
 
+// I've added the `icon` property to each market object below.
+// These paths point to images you would place in your /public/icons/ folder.
 const markets: Market[] = [
   {
     id: "1",
     title: "US government shutdown in 2025?",
+    icon: "/icons/politics.svg", // <-- ADDED
     leading: 62,
     outcomes: [
       { name: "Yes", pct: 62, type: "yes" },
@@ -16,6 +19,7 @@ const markets: Market[] = [
   {
     id: "2",
     title: "BTC above $100k by Dec 31, 2025?",
+    icon: "/icons/btc.svg", // <-- ADDED
     leading: 41,
     outcomes: [
       { name: "Yes", pct: 41, type: "yes" },
@@ -25,17 +29,19 @@ const markets: Market[] = [
   },
   {
     id: "3",
-    title: "Will Team USA win the next World Cup?",
-    leading: 28,
+    title: "ETH above $50k by Dec 31, 2025?",
+    icon: "/icons/btc.svg", // <-- ADDED
+    leading: 80,
     outcomes: [
-      { name: "Yes", pct: 28, type: "yes" },
-      { name: "No", pct: 72, type: "no" },
+      { name: "Yes", pct: 80, type: "yes" },
+      { name: "No", pct: 20, type: "no" },
     ],
-    volumeUsd: 452199,
+    volumeUsd: 521314,
   },
   {
     id: "4",
-    title: "Trump elected President in 2024?",
+    title: "Will Team USA win the next World Cup?",
+    icon: "/icons/btc.svg", // <-- ADDED
     leading: 55,
     outcomes: [
       { name: "Yes", pct: 55, type: "yes" },
@@ -45,37 +51,8 @@ const markets: Market[] = [
   },
   {
     id: "5",
-    title: "ETH hits new ATH in 2025?",
-    leading: 64,
-    outcomes: [
-      { name: "Yes", pct: 64, type: "yes" },
-      { name: "No", pct: 36, type: "no" },
-    ],
-    volumeUsd: 734221,
-  },
-  {
-    id: "6",
-    title: "Will there be a government shutdown in 2026?",
-    leading: 33,
-    outcomes: [
-      { name: "Yes", pct: 33, type: "yes" },
-      { name: "No", pct: 67, type: "no" },
-    ],
-    volumeUsd: 321553,
-  },
-  {
-    id: "7",
-    title: "S&P 500 above 6000 by end of year?",
-    leading: 47,
-    outcomes: [
-      { name: "Yes", pct: 47, type: "yes" },
-      { name: "No", pct: 53, type: "no" },
-    ],
-    volumeUsd: 1100532,
-  },
-  {
-    id: "8",
     title: "US Recession before 2026?",
+    icon: "/icons/btc.svg", // <-- ADDED
     leading: 38,
     outcomes: [
       { name: "Yes", pct: 38, type: "yes" },
@@ -84,84 +61,81 @@ const markets: Market[] = [
     volumeUsd: 845123,
   },
   {
-    id: "9",
-    title: "Fed cuts rates twice in 2025?",
-    leading: 52,
+    id: "6",
+    title: "S&P 500 above 6000 by end of year?",
+    icon: "/icons/btc.svg", // <-- ADDED
+    leading: 47,
     outcomes: [
-      { name: "Yes", pct: 52, type: "yes" },
-      { name: "No", pct: 48, type: "no" },
+      { name: "Yes", pct: 47, type: "yes" },
+      { name: "No", pct: 53, type: "no" },
     ],
-    volumeUsd: 654321,
+    volumeUsd: 1100532,
+  },
+  {
+    id: "7",
+    title: "Indonesia go into recession in 2026?",
+    icon: "/icons/btc.svg", // <-- ADDED
+    leading: 50,
+    outcomes: [
+      { name: "Yes", pct: 50, type: "yes" },
+      { name: "No", pct: 50, type: "no" },
+    ],
+    volumeUsd: 3218471,
+  },
+  {
+    id: "8",
+    title: "Fed cuts rates twice in 2025?",
+    icon: "/icons/btc.svg", // <-- ADDED
+    leading: 90,
+    outcomes: [
+      { name: "Yes", pct: 90, type: "yes" },
+      { name: "No", pct: 10, type: "no" },
+    ],
+    volumeUsd: 371411,
+  },
+  {
+    id: "9",
+    title: "Bitcoin dominance above 60% in 2025?",
+    icon: "/icons/btc.svg", // <-- ADDED
+    leading: 30,
+    outcomes: [
+      { name: "Yes", pct: 70, type: "yes" },
+      { name: "No", pct: 30, type: "no" },
+    ],
+    volumeUsd: 313313,
   },
   {
     id: "10",
     title: "Apple releases a foldable iPhone in 2025?",
-    leading: 23,
+    icon: "/icons/btc.svg", // <-- ADDED
+    leading: 10,
     outcomes: [
-      { name: "Yes", pct: 23, type: "yes" },
-      { name: "No", pct: 77, type: "no" },
+      { name: "Yes", pct: 90, type: "yes" },
+      { name: "No", pct: 10, type: "no" },
     ],
-    volumeUsd: 312045,
+    volumeUsd: 531234,
   },
   {
     id: "11",
-    title: "ETH ETFs approved in EU by 2025?",
-    leading: 58,
-    outcomes: [
-      { name: "Yes", pct: 58, type: "yes" },
-      { name: "No", pct: 42, type: "no" },
-    ],
-    volumeUsd: 489221,
-  },
-  {
-    id: "12",
-    title: "Bitcoin dominance above 60% in 2025?",
-    leading: 35,
-    outcomes: [
-      { name: "Yes", pct: 35, type: "yes" },
-      { name: "No", pct: 65, type: "no" },
-    ],
-    volumeUsd: 201778,
-  },
-  {
-    id: "13",
-    title: "Lakers reach the NBA Finals in 2026?",
-    leading: 29,
-    outcomes: [
-      { name: "Yes", pct: 29, type: "yes" },
-      { name: "No", pct: 71, type: "no" },
-    ],
-    volumeUsd: 442190,
-  },
-  {
-    id: "14",
     title: "US unemployment above 6% in 2025?",
-    leading: 18,
-    outcomes: [
-      { name: "Yes", pct: 18, type: "yes" },
-      { name: "No", pct: 82, type: "no" },
-    ],
-    volumeUsd: 182445,
-  },
-  {
-    id: "15",
-    title: "OpenAI releases GPT-6 in 2025?",
-    leading: 44,
-    outcomes: [
-      { name: "Yes", pct: 44, type: "yes" },
-      { name: "No", pct: 56, type: "no" },
-    ],
-    volumeUsd: 998765,
-  },
-  {
-    id: "16",
-    title: "US inflation below 2% by Q4 2025?",
+    icon: "/icons/btc.svg", // <-- ADDED
     leading: 31,
     outcomes: [
       { name: "Yes", pct: 31, type: "yes" },
       { name: "No", pct: 69, type: "no" },
     ],
-    volumeUsd: 351220,
+    volumeUsd: 95352,
+  },
+  {
+    id: "12",
+    title: "Lakers reach the NBA Finals in 2026?",
+    icon: "/icons/btc.svg", // <-- ADDED
+    leading: 32,
+    outcomes: [
+      { name: "Yes", pct: 32, type: "yes" },
+      { name: "No", pct: 68, type: "no" },
+    ],
+    volumeUsd: 312119,
   },
 ]
 
