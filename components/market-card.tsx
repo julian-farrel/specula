@@ -1,6 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react" // <-- ADDED HOOKS
+import Link from "next/link"
+
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -8,20 +10,14 @@ import { RadialGauge } from "./radial-gauge"
 import { BarChart3 } from "lucide-react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
+import type { Market } from "@/lib/data"
+
+export type { Market }
 
 type Outcome = {
   name: string
   pct: number
   type: "yes" | "no" | "other"
-}
-
-export type Market = {
-  id: string
-  title: string
-  icon?: string
-  leading: number
-  outcomes: Outcome[]
-  volumeUsd: number
 }
 
 function OutcomeRow({ outcome }: { outcome: Outcome }) {
@@ -37,9 +33,9 @@ function OutcomeRow({ outcome }: { outcome: Outcome }) {
             className={cn(
               "h-6 rounded-md px-2 text-[11px]",
               outcome.type === "yes" &&
-                "bg-[var(--color-positive)]/20 text-foreground hover:bg-[var(--color-positive)]/25",
+              "bg-[var(--color-positive)]/20 text-foreground hover:bg-[var(--color-positive)]/25",
               outcome.type === "no" &&
-                "bg-[var(--color-negative)]/20 text-foreground hover:bg-[var(--color-negative)]/25",
+              "bg-[var(--color-negative)]/20 text-foreground hover:bg-[var(--color-negative)]/25",
               outcome.type === "other" && "bg-primary/15 text-foreground hover:bg-primary/20",
             )}
           >
@@ -51,7 +47,7 @@ function OutcomeRow({ outcome }: { outcome: Outcome }) {
       <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-secondary">
         <div
           className={cn(
-            "h-full rounded-full",
+            "h-full rounded-full transition-all duration-500",
             outcome.type === "yes" && "bg-[var(--color-positive)]",
             outcome.type === "no" && "bg-[var(--color-negative)]",
             outcome.type === "other" && "bg-primary",
@@ -64,12 +60,8 @@ function OutcomeRow({ outcome }: { outcome: Outcome }) {
 }
 
 export function MarketCard({ market }: { market: Market }) {
-  // Create a state to hold the volume string. It's initialized with the plain
-  // number so the server and client render the exact same thing initially.
   const [formattedVolume, setFormattedVolume] = useState(market.volumeUsd.toString());
 
-  // This effect runs ONLY on the client, after the component has "hydrated".
-  // It then updates the state with the locale-specific formatted number.
   useEffect(() => {
     setFormattedVolume(market.volumeUsd.toLocaleString());
   }, [market.volumeUsd]);
@@ -97,12 +89,17 @@ export function MarketCard({ market }: { market: Market }) {
               <div className="h-7 w-7 rounded-md bg-primary/15 ring-1 ring-border" aria-hidden />
             )}
             <div className="space-y-1">
-              <Badge
-                variant="outline"
-                className="border-border/60 text-[10px] uppercase tracking-wide text-muted-foreground"
-              >
-                Binary
-              </Badge>
+              <div className="flex items-center gap-1.5">
+                <Badge
+                  variant="outline"
+                  className="border-border/60 text-[10px] uppercase tracking-wide text-muted-foreground"
+                >
+                  {market.category || "Binary"}
+                </Badge>
+                {market.status === "open" && (
+                  <div className="h-1.5 w-1.5 rounded-full bg-[var(--positive)] animate-pulse" />
+                )}
+              </div>
               <h3 className="max-w-[18ch] text-pretty text-sm font-semibold leading-5 text-foreground">
                 {market.title}
               </h3>
@@ -118,12 +115,11 @@ export function MarketCard({ market }: { market: Market }) {
           <div className="mt-2 flex items-center justify-between pt-2">
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <BarChart3 className="h-4 w-4 text-muted-foreground" />
-              {/* Use the state variable here for a safe, hydration-friendly render */}
               <span className="tabular-nums">${formattedVolume}</span>
               <span>volume</span>
             </div>
-            <Button variant="outline" size="sm" className="h-7 rounded-md border-border/60 text-xs bg-transparent">
-              View market
+            <Button asChild variant="outline" size="sm" className="h-7 rounded-md border-border/60 text-xs bg-transparent hover:bg-secondary">
+              <Link href={`/markets/${market.id}`}>View market</Link>
             </Button>
           </div>
         </CardContent>
