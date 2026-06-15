@@ -58,13 +58,16 @@ export default function MarketPage({ params }: { params: { id: string } }) {
                     <div className="lg:col-span-8 space-y-6">
                         <div className="flex items-start gap-4">
                             {market.icon ? (
+                                <div className="h-12 w-12 shrink-0 overflow-hidden rounded-lg ring-1 ring-border">
                                 <Image
                                     src={market.icon}
                                     alt=""
                                     width={48}
                                     height={48}
-                                    className="rounded-lg ring-1 ring-border"
+                                    className="h-full w-full object-cover"
+                                    unoptimized
                                 />
+                                </div>
                             ) : (
                                 <div className="h-12 w-12 rounded-lg bg-primary/15 ring-1 ring-border" aria-hidden />
                             )}

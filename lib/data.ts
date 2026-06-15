@@ -139,7 +139,7 @@ export const markets: Market[] = [
     id: "1",
     title: "US government shutdown in 2025?",
     category: "Politics",
-    icon: "/icons/politics.svg",
+    icon: "https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=64&h=64&fit=crop&auto=format",
     leading: 62,
     outcomes: [
       { name: "Yes", pct: 62, type: "yes" },
@@ -157,7 +157,7 @@ export const markets: Market[] = [
     id: "2",
     title: "BTC above $100k by Dec 31, 2025?",
     category: "Crypto",
-    icon: "/icons/btc.svg",
+    icon: "https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=040",
     leading: 41,
     outcomes: [
       { name: "Yes", pct: 41, type: "yes" },
@@ -175,7 +175,7 @@ export const markets: Market[] = [
     id: "3",
     title: "ETH above $50k by Dec 31, 2025?",
     category: "Crypto",
-    icon: "/icons/btc.svg",
+    icon: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=040",
     leading: 80,
     outcomes: [
       { name: "Yes", pct: 80, type: "yes" },
@@ -192,7 +192,7 @@ export const markets: Market[] = [
     id: "4",
     title: "Will Team USA win the next World Cup?",
     category: "Sports",
-    icon: "/icons/btc.svg",
+    icon: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=64&h=64&fit=crop&auto=format",
     leading: 55,
     outcomes: [
       { name: "Yes", pct: 55, type: "yes" },
@@ -209,7 +209,7 @@ export const markets: Market[] = [
     id: "5",
     title: "US Recession before 2026?",
     category: "Economy",
-    icon: "/icons/btc.svg",
+    icon: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=64&h=64&fit=crop&auto=format",
     leading: 38,
     outcomes: [
       { name: "Yes", pct: 38, type: "yes" },
@@ -226,7 +226,7 @@ export const markets: Market[] = [
     id: "6",
     title: "S&P 500 above 6000 by end of year?",
     category: "Finance",
-    icon: "/icons/btc.svg",
+    icon: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=64&h=64&fit=crop&auto=format",
     leading: 47,
     outcomes: [
       { name: "Yes", pct: 47, type: "yes" },
@@ -242,7 +242,7 @@ export const markets: Market[] = [
     id: "7",
     title: "Indonesia go into recession in 2026?",
     category: "Economy",
-    icon: "/icons/btc.svg",
+    icon: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=64&h=64&fit=crop&auto=format",
     leading: 50,
     outcomes: [
       { name: "Yes", pct: 50, type: "yes" },
@@ -258,7 +258,7 @@ export const markets: Market[] = [
     id: "8",
     title: "Fed cuts rates twice in 2025?",
     category: "Economy",
-    icon: "/icons/btc.svg",
+    icon: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=64&h=64&fit=crop&auto=format",
     leading: 90,
     outcomes: [
       { name: "Yes", pct: 90, type: "yes" },
@@ -274,7 +274,7 @@ export const markets: Market[] = [
     id: "9",
     title: "Bitcoin dominance above 60% in 2025?",
     category: "Crypto",
-    icon: "/icons/btc.svg",
+    icon: "https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=040",
     leading: 30,
     outcomes: [
       { name: "Yes", pct: 70, type: "yes" },
@@ -290,7 +290,7 @@ export const markets: Market[] = [
     id: "10",
     title: "Apple releases a foldable iPhone in 2025?",
     category: "Tech",
-    icon: "/icons/btc.svg",
+    icon: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=64&h=64&fit=crop&auto=format",
     leading: 10,
     outcomes: [
       { name: "Yes", pct: 90, type: "yes" },
@@ -306,7 +306,7 @@ export const markets: Market[] = [
     id: "11",
     title: "US unemployment above 6% in 2025?",
     category: "Economy",
-    icon: "/icons/btc.svg",
+    icon: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=64&h=64&fit=crop&auto=format",
     leading: 31,
     outcomes: [
       { name: "Yes", pct: 31, type: "yes" },
@@ -322,7 +322,7 @@ export const markets: Market[] = [
     id: "12",
     title: "Lakers reach the NBA Finals in 2026?",
     category: "Sports",
-    icon: "/icons/btc.svg",
+    icon: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=64&h=64&fit=crop&auto=format",
     leading: 32,
     outcomes: [
       { name: "Yes", pct: 32, type: "yes" },

@@ -78,13 +78,16 @@ export function MarketCard({ market }: { market: Market }) {
         <CardHeader className="flex flex-row items-center justify-between space-y-0 p-4">
           <div className="flex items-center gap-3">
             {market.icon ? (
-              <Image
-                src={market.icon || "/placeholder.svg"}
-                alt=""
-                width={28}
-                height={28}
-                className="rounded-md ring-1 ring-border"
-              />
+              <div className="h-7 w-7 shrink-0 overflow-hidden rounded-md ring-1 ring-border">
+                <Image
+                  src={market.icon}
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="h-full w-full object-cover"
+                  unoptimized
+                />
+              </div>
             ) : (
               <div className="h-7 w-7 rounded-md bg-primary/15 ring-1 ring-border" aria-hidden />
             )}
